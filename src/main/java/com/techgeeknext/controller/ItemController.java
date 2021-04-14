@@ -13,10 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -69,8 +66,12 @@ public class ItemController {
     @GetMapping("/getAllItems")
     public List<ItemsDao> getAllItems() {
         System.out.println("In getAllItems");
-
-        return itemsRepository.findAll();
+        List<ItemsDao> item=itemsRepository.findDistinctByReqIs(1);
+        for(ItemsDao item1 : item)
+        {
+            System.out.println(item1.getDescription());
+        }
+        return item;
     }
 
     @GetMapping("/getAllPostedItems/{item_id}")
@@ -86,11 +87,26 @@ public class ItemController {
         return (Set<ItemsDao>) item.get().getPosted_items();
     }
 
+
     @GetMapping("/getUserItems")
     public List<ItemsDao> getUserItems(HttpServletRequest request) {
         UserDao userDao = userRepository.findByUsername(userInfo.getUserName(request));
         List<ItemsDao> items = userDao.getItems();
         return items;
+    }
+
+    @GetMapping("/getUserReqItems")
+    public List<ItemsDao> getUserReqItems(HttpServletRequest request) {
+        UserDao userDao = userRepository.findByUsername(userInfo.getUserName(request));
+        List<ItemsDao> items = userDao.getItems();
+        List<ItemsDao> item_req = new ArrayList<ItemsDao>();
+        for(ItemsDao i:items)
+        {
+            if(i.getReq()==1)
+                item_req.add(i);
+        }
+
+        return item_req;
     }
 
 
