@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 @RestController
 @CrossOrigin(origins = "*")
 public class ItemController {
+    private static final Logger log = LogManager.getLogger(ItemController.class);
     @Autowired
     UserRepository userRepository;
 
@@ -40,7 +42,7 @@ public class ItemController {
         itemsDao.setReq(items.getReq());
 
         userDao.getItems().add(itemsDao);
-
+        log.info("Item Added Successfully !");
         return ResponseEntity.ok(userRepository.save(userDao));
     }
 
@@ -56,27 +58,44 @@ public class ItemController {
         itemsDao.setDescription(items.getDescription());
         itemsDao.setReq(items.getReq());
         System.out.println(item.get().getItem_id());
-        //itemsDao.setRequested_item(item.get());
+        itemsDao.setRequested_item(item.get());
         item.get().getPosted_items().add(itemsDao);
         userDao1.getItems().add(itemsDao);
-
+        log.info("Item Posted Sucessfully !");
         return ResponseEntity.ok(userRepository.save(userDao1));
     }
 
     @GetMapping("/getAllItems")
-    public List<ItemsDao> getAllItems() {
+    public List<ItemsDao> getAllItems(HttpServletRequest request) {
         System.out.println("In getAllItems");
         List<ItemsDao> item=itemsRepository.findDistinctByReqIs(1);
+            List<ItemsDao> item_user = new ArrayList<ItemsDao>();
+        UserDao userDao = userRepository.findByUsername(request.getParameter("user"));
+        List<ItemsDao> uitems = userDao.getItems();
+        
+         List<Integer> item_user_id = new ArrayList<Integer>();
+        for(ItemsDao item1 : uitems)
+        {
+          
+                item_user_id.add(item1.getItem_id());
+          
+        }
+
         for(ItemsDao item1 : item)
         {
             System.out.println(item1.getDescription());
+            if(!item_user_id.contains(item1.getItem_id()))
+                item_user.add(item1);
+          
         }
-        return item;
+         
+        return item_user;
     }
 
     @GetMapping("/getAllPostedItems/{item_id}")
     public Set<ItemsDao> getAllPostedItems(HttpServletRequest request,@PathVariable Integer item_id){
         Optional<ItemsDao> item=itemsRepository.findById(item_id);
+        
         System.out.println(item.get().getDescription());
         System.out.println(item.get().getPosted_items());
         Set<ItemsDao> Posted= item.get().getPosted_items();
@@ -97,7 +116,8 @@ public class ItemController {
 
     @GetMapping("/getUserReqItems")
     public List<ItemsDao> getUserReqItems(HttpServletRequest request) {
-        UserDao userDao = userRepository.findByUsername(userInfo.getUserName(request));
+           System.out.println("In getAll REqItems");
+        UserDao userDao = userRepository.findByUsername(request.getParameter("user"));
         List<ItemsDao> items = userDao.getItems();
         List<ItemsDao> item_req = new ArrayList<ItemsDao>();
         for(ItemsDao i:items)
@@ -107,6 +127,23 @@ public class ItemController {
         }
 
         return item_req;
+    }
+
+
+     @GetMapping("/isDuplicateUser")
+    public boolean isDuplicateUser(HttpServletRequest request) {
+        System.out.println("In user duplicacy");
+       
+        UserDao userDao = userRepository.findByUsername(request.getParameter("user"));
+     
+    if(userDao == null){
+      return true;
+    }
+    else{
+      return false;
+    }
+
+
     }
 
 

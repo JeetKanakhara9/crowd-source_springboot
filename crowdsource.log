@@ -1,0 +1,35 @@
+2021-05-15 13:41:15.447 1395 [main] INFO  c.t.SpringBootJwtApplicationTests - Starting SpringBootJwtApplicationTests on jeet-HP-Pavilion-Notebook with PID 30234 (started by jeet in /home/jeet/Desktop/milan/crowd-source_springboot-master (1)/crowd-source_springboot-master)
+2021-05-15 13:41:15.448 1396 [main] DEBUG c.t.SpringBootJwtApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2021-05-15 13:41:15.449 1397 [main] INFO  c.t.SpringBootJwtApplicationTests - No active profile set, falling back to default profiles: default
+2021-05-15 13:41:24.441 10389 [main] INFO  c.t.SpringBootJwtApplicationTests - Started SpringBootJwtApplicationTests in 9.359 seconds (JVM running for 11.103)
+2021-05-15 13:41:24.624 10572 [main] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:41:25.397 11345 [main] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:45:10.461 1320 [main] INFO  c.t.SpringBootJwtApplicationTests - Starting SpringBootJwtApplicationTests on jeet-HP-Pavilion-Notebook with PID 30465 (started by jeet in /home/jeet/Desktop/milan/crowd-source_springboot-master (1)/crowd-source_springboot-master)
+2021-05-15 13:45:10.462 1321 [main] DEBUG c.t.SpringBootJwtApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2021-05-15 13:45:10.465 1324 [main] INFO  c.t.SpringBootJwtApplicationTests - No active profile set, falling back to default profiles: default
+2021-05-15 13:45:19.390 10249 [main] INFO  c.t.SpringBootJwtApplicationTests - Started SpringBootJwtApplicationTests in 9.456 seconds (JVM running for 11.146)
+2021-05-15 13:45:19.540 10399 [main] INFO  c.t.SpringBootJwtApplicationTests - User Registration test
+2021-05-15 13:45:19.589 10448 [main] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:45:20.232 11091 [main] INFO  c.t.SpringBootJwtApplicationTests - Registration Successfull !!
+2021-05-15 13:45:20.232 11091 [main] INFO  c.t.SpringBootJwtApplicationTests - Login test
+2021-05-15 13:45:20.233 11092 [main] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:51:32.611 1320 [main] INFO  c.t.SpringBootJwtApplication - Starting SpringBootJwtApplication on jeet-HP-Pavilion-Notebook with PID 30850 (started by jeet in /home/jeet/Desktop/milan/crowd-source_springboot-master (1)/crowd-source_springboot-master)
+2021-05-15 13:51:32.674 1383 [main] DEBUG c.t.SpringBootJwtApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2021-05-15 13:51:32.675 1384 [main] INFO  c.t.SpringBootJwtApplication - No active profile set, falling back to default profiles: default
+2021-05-15 13:51:43.157 11866 [main] DEBUG c.t.config.JwtRequestFilter - Filter 'jwtRequestFilter' configured for use
+2021-05-15 13:51:44.163 12872 [main] INFO  c.t.SpringBootJwtApplication - Started SpringBootJwtApplication in 12.178 seconds (JVM running for 19.225)
+2021-05-15 13:54:33.208 181917 [http-nio-8087-exec-1] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:37.731 186440 [http-nio-8087-exec-2] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:38.361 187070 [http-nio-8087-exec-3] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:38.579 187288 [http-nio-8087-exec-4] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:38.699 187408 [http-nio-8087-exec-5] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:38.855 187564 [http-nio-8087-exec-6] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:39.030 187739 [http-nio-8087-exec-7] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:44.582 193291 [http-nio-8087-exec-8] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:44.868 193577 [http-nio-8087-exec-9] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:46.029 194738 [http-nio-8087-exec-9] INFO  c.t.c.JwtAuthenticationController - User Registered Sucessfully!
+2021-05-15 13:54:59.545 208254 [http-nio-8087-exec-10] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:54:59.561 208270 [http-nio-8087-exec-7] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:55:00.142 208851 [http-nio-8087-exec-7] INFO  c.t.c.JwtAuthenticationController - User Login Sucessfully!
+2021-05-15 13:55:49.022 257731 [http-nio-8087-exec-2] WARN  c.t.config.JwtRequestFilter - JWT Token does not begin with Bearer String
+2021-05-15 13:55:49.289 257998 [http-nio-8087-exec-8] INFO  c.t.controller.ItemController - Item Added Successfully !
